@@ -8,6 +8,9 @@ class UpperCaseModule(classes.AbstractModule):
     name = 'Upper case'
     sort = 0
 
+    def on_register(self, text_area):
+        pass
+
     def do_action(self, text_area, cursor_pos, selected_text, selection_start, selection_end):
         # self.text_area.insert(
         #     '1.0',

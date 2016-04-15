@@ -15,7 +15,7 @@ class AbstractModule(object):
     sort = 0
 
     def do_action_wrap(self):
-        cursor_pos = 0
+        cursor_pos = None
 
         try:
             cursor_pos = self.text_area.index(INSERT)
@@ -23,8 +23,8 @@ class AbstractModule(object):
             pass
 
         selected_text = None
-        selection_start = 0.0
-        selection_end = 0.0
+        selection_start = None
+        selection_end = None
 
         try:
             selected_text = self.text_area.selection_get()
@@ -34,6 +34,10 @@ class AbstractModule(object):
             pass
 
         self.do_action(self.text_area, cursor_pos, selected_text, selection_start, selection_end)
+        pass
+
+    @abstractmethod
+    def on_register(self, text_area):
         pass
 
     @abstractmethod
