@@ -36,6 +36,9 @@ for module in os.listdir(os.path.dirname(__file__) + "/modules"):
     class_ = getattr(module_, module_name)
     instance = class_(text_area=text_area)
     plugins_menu.add_command(label=instance.name, command=instance.do_action_wrap)
+
+    instance.on_register(text_area)
+
 # del module
 main_menu_bar.add_cascade(label="Плагины", menu=plugins_menu)
 
