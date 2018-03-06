@@ -1,3 +1,3 @@
 # modular-text-editor
 
-'hello-world' project type
+Extensible text editor project
